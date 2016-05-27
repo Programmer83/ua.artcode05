@@ -20,9 +20,7 @@ public class fourFive {
         } else {
             if (num2 > num1) {
                 res = num1 + num2;
-
             }
-
         }
         System.out.println("res: " + res);
     }
