@@ -1,4 +1,4 @@
-package ua.artcode05.week1;
+package ua.artcode05.week1.Home;
 
 import java.util.Scanner;
 
