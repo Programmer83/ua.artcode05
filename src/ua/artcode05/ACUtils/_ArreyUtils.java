@@ -1,4 +1,4 @@
-package ua.artcode05.week2.Home;
+package ua.artcode05.ACUtils;
 
 import java.util.Scanner;
 
