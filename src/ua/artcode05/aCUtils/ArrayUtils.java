@@ -1,8 +1,8 @@
-package ua.artcode05.ACUtils;
+package aCUtils;
 
 import java.util.Scanner;
 
-public class _ArrayUtils {
+public class ArrayUtils {
 
     /*Создание массива и заполнение случайными числами*/
     public static int[] generateMasRandom(int size, int range) {

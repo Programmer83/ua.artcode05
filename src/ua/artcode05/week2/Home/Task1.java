@@ -1,7 +1,7 @@
 package ua.artcode05.week2.Home;
 
 
-import artcodeUtils.ArrayUtils;
+import  aCUtils.ArrayUtils;
 
 import java.util.Scanner;
 
