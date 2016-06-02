@@ -10,10 +10,10 @@ public class fourSeven {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter first number");
+        System.out.print("Enter first number");
         int num1 = sc.nextInt();
 
-        System.out.println("Enter second number");
+        System.out.print("Enter second number");
         int num2 = sc.nextInt();
 
         double res = num1/num2;
