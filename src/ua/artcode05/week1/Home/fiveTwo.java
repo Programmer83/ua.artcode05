@@ -11,7 +11,7 @@ public class fiveTwo {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Please insert Factorial length: ");
+        System.out.print("Please insert Factorial length: ");
 
         int lenght = sc.nextInt();
         int fl = 1;
