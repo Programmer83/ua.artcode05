@@ -1,11 +1,11 @@
-package aCUtils;
+package ua.artcode05.acutils;
 
 import java.util.Scanner;
 
 public class ArrayUtils {
 
     /*Создание массива и заполнение случайными числами*/
-    public static int[] generateMasRandom(int size, int range) {
+    public static int[] genArrRandom(int size, int range) {
         int[] mas = new int[size];
         for (int i = 0; i < mas.length; i++) {
             mas[i] = (int) (Math.random() * range);
@@ -14,7 +14,7 @@ public class ArrayUtils {
     }
 
     /*Конвертация массива*/
-    public static String convertMas(int[] mas) {
+    public static String convertArr(int[] mas) {
         String res = "";
         for (int i = 0; i < mas.length; i++) {
             res = res + mas[i] + ", ";
@@ -23,29 +23,9 @@ public class ArrayUtils {
     }
 
     /*Вывод массива на консоль*/
-    public static void printMas(int[] mas) {
+    public static void printArr(int[] mas) {
         for (int i = 0; i < mas.length; i++) {
             System.out.print(mas[i] + ", ");
-        }
-    }
-
-    /*Создание массива (линии) задаваемой длины и заполнение 0 и 1*/
-    public static int[] generateMasRandom0And1() {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Input length of line: ");
-        int size = sc.nextInt();
-
-        if (size <= 0) {
-            System.out.println("Line must have 1 or more numbers!");
-            return null;
-        } else {
-
-            int[] mas = new int[size];
-            for (int i = 0; i < mas.length; i++) {
-                mas[i] = (int) Math.round(Math.random());
-            }
-            return mas;
         }
     }
 
@@ -56,7 +36,7 @@ public class ArrayUtils {
         int minIndex = ArrayUtils.findMinIndex(mas);
         int maxIndex = ArrayUtils.findMaxIndex(mas);
 
-        String str = ArrayUtils.convertMas(mas);
+        String str = ArrayUtils.convertArr(mas);
         System.out.println("Array is: " + str);
         System.out.println("Max number is: " + maxIndex + "\nMin number is: " + minIndex);
     }
@@ -83,7 +63,7 @@ public class ArrayUtils {
 
 
 
-    /*2) Поменять местами наибольший и наименьший элементы в массиве*/
+    /*3) Поменять местами наибольший и наименьший элементы в массиве*/
 
     public static int[] replaceMinMax(int[] mas) {
 
@@ -107,63 +87,9 @@ public class ArrayUtils {
     }
 
 
-    /*3) Заданы два массива одинаковой длины с любыми значениями
-    скопировать данные из первого массива во второй*/
+    /*2) Найти среднее арифметическое массива*/
 
-    public static int[] copyMas1ToMas2(int[] mas1, int[] mas2) {
-
-        if (mas1.length == mas2.length) {
-
-            for (int i = 0; i < mas1.length; i++) {
-                mas2[i] = mas1[i];
-            }
-
-        } else {
-            System.out.println("You have entered different size arrays! Try again");
-            return null;
-        }
-        return mas2;
-    }
-
-
-    /*4) Посчитать сколько цифр(цифра задается пользователем) в массиве*/
-
-    public static int countNumInMas(int number, int[] mas) {
-
-        int count = 0;
-
-        for (int i = 0; i < mas.length; i++) {
-            if (mas[i] == number) {
-                count++;
-            }
-        }
-
-        return count;
-    }
-
-
-    /*5) Заполнить массив случайными значениями. На четных индексах парные значения, на нечетных непарные*/
-
-    public static int[] generateMasEvenRandomOnEvenIndex(int size, int range) {
-
-        int[] mas = new int[size];
-        int random = 0;
-
-        for (int i = 0; i < mas.length; i++) {
-            random = (int) (Math.random() * range);
-            if (i == 0 || i %2 == 0) {
-                mas[i] = random %2 == 0 ? random : random + 1;
-            } else {
-                mas[i] = random %2 != 0 ? random : random + 1;
-            }
-        }
-        return mas;
-    }
-
-
-    /*6) Найти среднее арифметическое массива*/
-
-    public static int findAverageOfMas(int[] mas) {
+    public static int findAverageOfArr(int[] mas) {
 
         int sum = 0;
 
@@ -175,63 +101,10 @@ public class ArrayUtils {
     }
 
 
-
-    /*7) Вывести в консоль элементы той половины одномерного массива
-    у которой среднее арифметическое максимальное*/
-
-    public static void averageOfHalfMas(int[] mas) {
-        int sum1 = 0;
-        int sum2 = 0;
-        int halfMas = mas.length / 2;
-
-        for (int i = 0; i < halfMas; i++) {
-            sum1 += mas[i];
-        }
-
-        for (int i = halfMas; i < mas.length; i++) {
-            sum2 += mas[i];
-        }
-
-        if (sum1 / halfMas > sum2 / halfMas) {
-            ArrayUtils.printPartOfMas(mas, 0, halfMas);
-        } else {
-            ArrayUtils.printPartOfMas(mas, halfMas, mas.length);
-        }
-    }
-
-    public static void printPartOfMas(int[] mas, int start, int end) {
-
-        for (int i = start; i < end; i++) {
-            System.out.print(mas[i] + ", ");
-        }
-    }
-
-
-
-    /*8) Eсть два массива одинаковой длины arr1 и arr2 вывести в консоль значения массива,
-	   который получается в результате суммы arr1[i] + arr2[i]*/
-
-    public static void summArr1Arr2(int[] arr1, int[] arr2) {
-
-        if (arr1.length == arr2.length) {
-
-            int[] arr3 = new int[arr1.length];
-
-            for (int i = 0; i < arr1.length; i++) {
-                arr3[i] = arr1[i] + arr2[i];
-                System.out.print(arr3[i] + ", ");
-            }
-        } else {
-            System.out.print("Array length must be the same!");
-        }
-    }
-
-
-
     /*9) Задать два массива случайными числами от 25 до 75.
     Определить у какого из массивов больше парных елементов.*/
 
-    public static boolean evenElementsInMas(int size1, int size2) {
+    public static boolean sameElemInArr(int size1, int size2) {
 
         int[] mas1 = new int[size1];
         int[] mas2 = new int[size2];
@@ -252,9 +125,9 @@ public class ArrayUtils {
         }
 
         System.out.print("\nArray1 is: ");
-        ArrayUtils.printMas(mas1);
+        ArrayUtils.printArr(mas1);
         System.out.print("\nArray2 is: ");
-        ArrayUtils.printMas(mas2);
+        ArrayUtils.printArr(mas2);
 
         boolean res = even1 > even2;
         System.out.println("\n\nArray1 has more even numbers than array2?\n" + res);
@@ -263,22 +136,38 @@ public class ArrayUtils {
     }
 
 
+    /*8) Заполнить массив случайными значениями. На четных индексах парные значения, на нечетных непарные*/
 
-    /*10) public static int[] splitArray(int[] arr, int start, int end)
-    { // обрезать массив по границам start и end}*/
+    public static int[] genArrEvenRandomOnEvenIndex(int size, int range) {
 
-    public static int[] splitArray(int[] arr, int start, int end) {
+        int[] mas = new int[size];
+        int random = 0;
 
-        if (start >= 0 && start <= arr.length && end >= 0 && end <= arr.length) {
-
-            int[] split = new int[end - start + 1];
-
-            for(int i = 0; i < split.length; i++) {
-                split[i] = arr[start + i];
+        for (int i = 0; i < mas.length; i++) {
+            random = (int) (Math.random() * range);
+            if (i == 0 || i %2 == 0) {
+                mas[i] = random %2 == 0 ? random : random + 1;
+            } else {
+                mas[i] = random %2 != 0 ? random : random + 1;
             }
-            return split;
         }
-        return null;
+        return mas;
     }
-}
 
+    /*5) Посчитать сколько цифр(цифра задается пользователем) в массиве*/
+
+    public static int countNumInArr(int number, int[] mas) {
+
+        int count = 0;
+
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] == number) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+
+}
