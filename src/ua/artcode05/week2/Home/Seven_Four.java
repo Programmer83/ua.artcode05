@@ -21,9 +21,9 @@ public static void main(String[] args) {
         System.out.println("Input index of move: ");
         int move = sc.nextInt();
 
-        int[] mas2 = ArrayUtils.moveArray(mas1, move);
+      /*  int[] mas2 = ArrayUtils.moveArray(mas1, move);
 
         String res2 = ArrayUtils.convertArr(mas2);
         System.out.println(" Array after: " + res2);
-        }
+        }*/
         }
